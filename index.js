@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const app = express()
 const port = 3000
 const bodyParser = require('body-parser')
+const user = require('./schema')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', function (req, res) {
@@ -11,17 +12,42 @@ app.get('/', function (req, res) {
 })
 
 // api for user registration
-app.post('/registration', function (req, res) {
+app.post('/registration', async function (req, res) {
     try {
-        const data = req.body
-        console.log(data)
+        await user.create({
+            'username': req.body.username,
+            'email': req.body.email,
+            'password': req.body.password
+        })
         res.send("Your data is sent successfully")
     } catch (error) {
         console.log(error)
     }
 })
 
-async function main(){
+// api for user login
+app.post('/login', async function (req, res) {
+    try {
+        let data = await user.findOne({
+            'username': req.body.username
+        }).exec()
+        // check if data is null invalid user
+        if(data == null){
+            res.send("invalid user")
+        }
+        // validate password
+        else if(data.password === req.body.password){
+            res.send("<h1>Successfully logged in</h1>")
+        }
+        else{
+            res.send("<h1>Password is invalid</h1>")
+        }
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+async function main() {
     await mongoose.connect(process.env.URI)
 }
 main().catch(err => console.log(err))
