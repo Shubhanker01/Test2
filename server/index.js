@@ -52,7 +52,7 @@ app.post('/forgotpassword', async function (req, res) {
     try {
         let data = await user.findOne({ 'username': req.body.username }).exec()
         if (data == null) {
-            res.send("<h1 style={color:'Red'}>Invalid username cannot change password</h1>")
+            res.send("<h1>Invalid username cannot change password</h1>")
         }
         else {
             await user.findOneAndUpdate({ 'username': req.body.username }, { 'password': req.body.password })
