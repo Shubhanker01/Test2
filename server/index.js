@@ -19,7 +19,7 @@ app.post('/registration', async function (req, res) {
             'email': req.body.email,
             'password': req.body.password
         })
-        res.send("Your data is sent successfully")
+        res.send("<h1>You have registered successfully</h1>")
     } catch (error) {
         console.log(error)
     }
@@ -33,7 +33,7 @@ app.post('/login', async function (req, res) {
         }).exec()
         // check if data is null invalid user
         if (data == null) {
-            res.send("invalid user")
+            res.send("<h1>invalid user</h1>")
         }
         // validate password
         else if (data.password === req.body.password) {
@@ -52,11 +52,11 @@ app.post('/forgotpassword', async function (req, res) {
     try {
         let data = await user.findOne({ 'username': req.body.username }).exec()
         if (data == null) {
-            res.send('Invalid username cannot change password')
+            res.send("<h1 style={color:'Red'}>Invalid username cannot change password</h1>")
         }
         else {
             await user.findOneAndUpdate({ 'username': req.body.username }, { 'password': req.body.password })
-            res.send('successfully updated')
+            res.send("<h1>successfully updated</h1>")
         }
     }
     catch (error) {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>User Registration</title>
+</head>
+
+<body>
+    <div class="head">
+        <a href="login.html">Login</a>
+        <a href="forgetuser.html">Forget User</a>
+    </div>
+    <div class="reg-form">
+        <form action="http://localhost:3000/registration" method="post">
+            <h1>User Registration</h1>
+            <div>
+                <label for="username">Username</label>
+                <br>
+                <input type="text" name="username" required minlength="3" value="">
+            </div>
+            <br>
+            <div>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" value="" required>
+            </div>
+            <br>
+            <div>
+                <label for="password">Password</label>
+                <br>
+                <input type="password" name="password" value="" required>
+            </div>
+            <br>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

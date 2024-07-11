@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #eceffc;
+}
+
+.head {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.head a {
+    margin-left: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: antiquewhite;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.reg-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 35px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.reg-form div {
+    margin-top: 10px;
+}
+
+.reg-form div input {
+    border: none;
+    border-bottom: 2px solid #eceffc;
+    color: azure;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 85%;
+    padding: 10px;
+}
+
+.reg-form button {
+    margin-left: 93px;
+    margin-bottom: 27px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #70afff;
+    padding: 10px;
+    border: 1px solid #70afff;
+    border-radius: 5px;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    width: 305px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+.login-form div {
+    margin-top: 10px;
+}
+
+.login-form div input {
+    border: none;
+    border-bottom: 2px solid #eceffc;
+    color: azure;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 85%;
+    padding: 10px;
+}
+
+.login-form button {
+    margin-top: 15px;
+    margin-left: 53px;
+    margin-bottom: 27px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #70afff;
+    padding: 10px;
+    border: 1px solid #70afff;
+    border-radius: 5px;
+}
+
+.forget-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    width: 305px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+.forget-form div {
+    margin-top: 10px;
+}
+
+.forget-form div input {
+    border: none;
+    border-bottom: 2px solid #eceffc;
+    color: azure;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 85%;
+    padding: 10px;
+}
+
+.forget-form button {
+    margin-top: 15px;
+    margin-left: 53px;
+    margin-bottom: 27px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #70afff;
+    padding: 10px;
+    border: 1px solid #70afff;
+    border-radius: 5px;
+}
