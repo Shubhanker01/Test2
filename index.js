@@ -32,17 +32,34 @@ app.post('/login', async function (req, res) {
             'username': req.body.username
         }).exec()
         // check if data is null invalid user
-        if(data == null){
+        if (data == null) {
             res.send("invalid user")
         }
         // validate password
-        else if(data.password === req.body.password){
+        else if (data.password === req.body.password) {
             res.send("<h1>Successfully logged in</h1>")
         }
-        else{
+        else {
             res.send("<h1>Password is invalid</h1>")
         }
     } catch (error) {
+        console.log(error)
+    }
+})
+
+// api for forgot password
+app.post('/forgotpassword', async function (req, res) {
+    try {
+        let data = await user.findOne({ 'username': req.body.username }).exec()
+        if (data == null) {
+            res.send('Invalid username cannot change password')
+        }
+        else {
+            await user.findOneAndUpdate({ 'username': req.body.username }, { 'password': req.body.password })
+            res.send('successfully updated')
+        }
+    }
+    catch (error) {
         console.log(error)
     }
 })
